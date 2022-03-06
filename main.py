@@ -3,7 +3,7 @@ import yfinance as yfin
 yfin.pdr_override()
 
 # Data Extraction
-ticker = "C"
+ticker = "TSLA"
 t = Ticker(ticker)
 df = t.income_statement(frequency='q')
 dt = t.cash_flow(frequency="q")
