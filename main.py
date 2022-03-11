@@ -34,6 +34,7 @@ equity = db[['asOfDate', 'TotalEquityGrossMinorityInterest']]
 totcap = db[['asOfDate', 'TotalCapitalization']]
 taxRate = df[['asOfDate', 'TaxRateForCalcs']]
 roe = dl.get(ticker, {}).get("returnOnEquity")
+beta = do.get(ticker, {}).get("beta")
 
 
 try:
@@ -135,7 +136,7 @@ close = do.get(ticker, {}).get("previousClose")
 fiftyTwoWeekLow = do.get(ticker, {}).get("fiftyTwoWeekLow")
 fiftyTwoWeekHigh = do.get(ticker, {}).get("fiftyTwoWeekHigh")
 
-
+print(f"Beta(5Y Monthly): {beta}")
 print(f"Volatility Score: {stock_df['Std'][0]}")
 print(f"Previous Close: {close}")
 print(f"52 Week Low: {fiftyTwoWeekLow}")
